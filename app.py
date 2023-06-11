@@ -93,6 +93,16 @@ def run_serial_reader():
     while True:
         # 시리얼 데이터 읽기
         uid = ser.readline().decode().strip()
+        # uid 구분
+        if uid == "232 251 18 13":
+            uid = "김두한"
+        elif uid == "83 224 214 52":
+            uid = "심영"
+        elif uid == "228 218 134 164":
+            uid = "정상범"
+        else :
+            uid += "신원불명"
+
 
         # 현재 시간 가져오기
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
